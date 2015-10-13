@@ -7,81 +7,113 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="3Lm-pm-Sso">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gES-Zh-ABe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hJB-uH-hH1" customClass="TabBarViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4kh-aa-YaG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="gdB-De-BRT" userLabel="tabBar">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="516" width="320" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_icon" id="c0l-lQ-Alh">
-                                        <rect key="frame" x="76" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_icon" id="5jd-H5-xQc">
-                                        <rect key="frame" x="18" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_icon" id="iu4-n7-hKE">
-                                        <rect key="frame" x="271" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="account_icon" id="OL0-6T-Quk">
-                                        <rect key="frame" x="206" y="5" width="35" height="35"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="compose_button" id="gnh-vB-wC3">
-                                        <rect key="frame" x="135" y="5" width="50" height="35"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="n5U-Gs-XUS">
+                                        <rect key="frame" x="203" y="13" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" backgroundImage="account_icon"/>
+                                        <state key="selected" backgroundImage="account_selected_icon"/>
+                                        <connections>
+                                            <action selector="onAccountButton:" destination="hJB-uH-hH1" eventType="touchUpInside" id="gEx-tr-Urd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="I2i-q8-jVV">
+                                        <rect key="frame" x="63" y="13" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" backgroundImage="search_icon"/>
+                                        <state key="selected" backgroundImage="search_selected_icon"/>
+                                        <connections>
+                                            <action selector="onSearchButton:" destination="hJB-uH-hH1" eventType="touchUpInside" id="603-gw-6YT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5f6-A4-jG5">
+                                        <rect key="frame" x="128" y="13" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="compose_button"/>
+                                        <state key="selected" backgroundImage="compose_button"/>
+                                        <connections>
+                                            <action selector="onComposeButton:" destination="hJB-uH-hH1" eventType="touchUpInside" id="265-1o-x4f"/>
+                                            <segue destination="hrP-ig-8HL" kind="modal" id="qrs-r0-yTv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SXq-nV-pL9">
+                                        <rect key="frame" x="265" y="13" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" backgroundImage="trending_icon"/>
+                                        <state key="selected" backgroundImage="trending_selected_icon"/>
+                                        <connections>
+                                            <action selector="onTrendingButton:" destination="hJB-uH-hH1" eventType="touchUpInside" id="855-4W-eg6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="P60-Yb-6Ve">
+                                        <rect key="frame" x="8" y="13" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <state key="normal" backgroundImage="home_icon"/>
+                                        <state key="selected" backgroundImage="home_selected_icon"/>
+                                        <connections>
+                                            <action selector="onHomeBuuton:" destination="hJB-uH-hH1" eventType="touchUpInside" id="M8H-2J-m3u"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960784313725" green="0.19607843137254902" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" id="vYJ-Cm-3pe" userLabel="contentView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="vYJ-Cm-3pe" id="UMP-h8-1oI"/>
+                        <outlet property="initialHome" destination="P60-Yb-6Ve" id="Pje-kr-6RX"/>
+                        <outlet property="tabView" destination="gdB-De-BRT" id="iTx-Zy-qR4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gES-Zh-ABe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="282"/>
         </scene>
         <!--Home View Controller-->
-        <scene sceneID="8g1-mo-1QW">
+        <scene sceneID="fL3-kX-3ns">
             <objects>
-                <viewController storyboardIdentifier="homeViewController" id="lQi-Xk-qQR" customClass="homeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iff-gI-2Th">
+                <viewController storyboardIdentifier="homeViewController" id="2Ov-8z-c6V" customClass="homeViewController" customModule="tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lsr-iH-qwv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home" id="T0t-BJ-cZu">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home" id="YSr-GR-tKD">
+                                <rect key="frame" x="0.0" y="-3" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="UtB-Rz-1g5">
-                                <rect key="frame" x="87" y="162" width="146" height="146"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="wUV-bL-SSt">
+                                <rect key="frame" x="86" y="154" width="146" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="vyb-MD-Vds">
-                                <rect key="frame" x="0.0" y="308" width="320" height="100"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="Bde-Yx-Bpg">
+                                <rect key="frame" x="9" y="285" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E6z-yD-Y4P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uYt-AK-Q5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="208" y="977"/>
+            <point key="canvasLocation" x="171" y="977"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="dl0-TE-iZn">
@@ -112,40 +144,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="aeS-yi-ea1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="526"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="photo_icon" id="fIC-h9-hpE">
-                                        <rect key="frame" x="26" y="206" width="75" height="95"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nevermind" id="eVq-2P-8Pr">
-                                        <rect key="frame" x="1" y="471" width="320" height="53"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="eYj-H1-78M">
-                                        <rect key="frame" x="122" y="206" width="75" height="95"/>
+                                        <rect key="frame" x="28" y="215" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="quote_icon" id="H7S-qE-bmb">
-                                        <rect key="frame" x="217" y="65" width="75" height="96"/>
+                                        <rect key="frame" x="229" y="84" width="75" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="chat_icon" id="tr3-hd-WuC">
-                                        <rect key="frame" x="26" y="65" width="75" height="96"/>
+                                        <rect key="frame" x="28" y="83" width="75" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="video_icon" id="yI5-9f-w9U">
-                                        <rect key="frame" x="122" y="65" width="75" height="95"/>
+                                        <rect key="frame" x="128" y="85" width="75" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="text_icon" id="eYj-H1-78M">
+                                        <rect key="frame" x="128" y="215" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="link_icon" id="ZA0-7B-BVE">
-                                        <rect key="frame" x="217" y="206" width="75" height="95"/>
+                                        <rect key="frame" x="229" y="215" width="75" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.14901960780000001" green="0.1960784314" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="nevermind" id="eVq-2P-8Pr">
+                                <rect key="frame" x="0.0" y="515" width="320" height="53"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YhD-Pk-8iL">
+                                <rect key="frame" x="47" y="515" width="227" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="nevermindButton:" destination="hrP-ig-8HL" eventType="touchUpInside" id="U8Y-wd-Unx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -163,7 +202,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="account" id="7B6-DB-NlM">
-                                <rect key="frame" x="3" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
                         </subviews>
@@ -198,11 +237,13 @@
     <resources>
         <image name="account" width="320" height="524"/>
         <image name="account_icon" width="35" height="35"/>
+        <image name="account_selected_icon" width="35" height="35"/>
         <image name="chat_icon" width="75" height="96"/>
         <image name="compose_button" width="50" height="35"/>
         <image name="home" width="320" height="524"/>
         <image name="home_icon" width="35" height="35"/>
         <image name="home_overlay" width="320" height="100"/>
+        <image name="home_selected_icon" width="35" height="35"/>
         <image name="home_spinner" width="146" height="146"/>
         <image name="link_icon" width="75" height="95"/>
         <image name="nevermind" width="320" height="53"/>
@@ -210,9 +251,11 @@
         <image name="quote_icon" width="75" height="96"/>
         <image name="search_feed" width="320" height="524"/>
         <image name="search_icon" width="35" height="35"/>
+        <image name="search_selected_icon" width="35" height="35"/>
         <image name="text_icon" width="75" height="95"/>
         <image name="trending_feed" width="320" height="1217"/>
         <image name="trending_icon" width="35" height="35"/>
+        <image name="trending_selected_icon" width="35" height="35"/>
         <image name="video_icon" width="75" height="95"/>
     </resources>
 </document>

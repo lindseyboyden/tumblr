@@ -9,22 +9,91 @@
 import UIKit
 
 class TabBarViewController: UIViewController {
+    
+    var homeViewController: UIViewController!
+    var searchViewController: UIViewController!
+    var composeViewController: UIViewController!
+    var accountViewController: UIViewController!
+    var trendingViewController: UIViewController!
+    var previousButton: UIButton!
 
+    @IBOutlet weak var initialHome: UIButton!
+ 
+    @IBAction func onHomeBuuton(sender: UIButton) {
+        
+        
+        homeViewController.view.frame = contentView.bounds
+        
+        contentView.addSubview(homeViewController.view)
+        
+        sender.selected = true
+        
+        previousButton = sender
+
+    }
+    @IBAction func onSearchButton(sender: UIButton) {
+        searchViewController.view.frame = contentView.frame
+        contentView.addSubview(searchViewController.view)
+        
+        previousButton.selected = false
+        
+        sender.selected = true
+        
+        previousButton = sender
+        
+        print("search")
+    }
+    
+    @IBAction func onComposeButton(sender: UIButton) {
+        
+        print("compose")
+    }
+    
+    @IBAction func onAccountButton(sender: UIButton) {
+        print("account")
+        accountViewController.view.frame = contentView.frame
+        
+        contentView.addSubview(accountViewController.view)
+        
+        previousButton.selected = false
+        
+        sender.selected = true
+
+        previousButton = sender
+    }
+    
+    @IBAction func onTrendingButton(sender: UIButton) {
+        print("trend")
+        trendingViewController.view.frame = contentView.frame
+        contentView.addSubview(trendingViewController.view)
+       
+        previousButton.selected = false
+        
+        sender.selected = true
+        
+        previousButton = sender
+        
+    }
+    
     @IBOutlet weak var contentView: UIView!
+    
+    @IBOutlet weak var tabView: UIView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+       var storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var homeView = storyboard.instantiateViewControllerWithIdentifier("homeViewController") as! homeViewController
+        homeViewController = storyboard.instantiateViewControllerWithIdentifier("homeViewController")
+        composeViewController = storyboard.instantiateViewControllerWithIdentifier("composeViewController")
+        searchViewController = storyboard.instantiateViewControllerWithIdentifier("searchViewController")
+        accountViewController = storyboard.instantiateViewControllerWithIdentifier("accountViewController")
+        trendingViewController = storyboard.instantiateViewControllerWithIdentifier("trendingViewController")
         
-        var searchView = storyboard.instantiateViewControllerWithIdentifier("searchViewController") as! searchViewController
         
-        var composeView = storyboard.instantiateViewControllerWithIdentifier("composeViewController") as! composeViewController
+        initialHome.selected = true
         
-        var accountView = storyboard.instantiateViewControllerWithIdentifier("accountViewController") as! accountViewController
-        
-        var trendingView = storyboard.instantiateViewControllerWithIdentifier("trendingViewController") as! trendingViewController
+        contentView.addSubview(homeViewController.view)
         
     }
 

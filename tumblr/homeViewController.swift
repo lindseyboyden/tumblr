@@ -2,7 +2,7 @@
 //  homeViewController.swift
 //  tumblr
 //
-//  Created by Lindsey Boyden on 10/6/15.
+//  Created by Lindsey Boyden on 10/7/15.
 //  Copyright © 2015 Lindsey Boyden. All rights reserved.
 //
 
